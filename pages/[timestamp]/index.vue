@@ -49,7 +49,7 @@ import { useRoute, useHead, useRuntimeConfig } from '#imports'
 
 const route = useRoute()
 const timestamp = route.params.timestamp as string
-const imageUrl = `https://ncm-boot-images.s3.us-east-1.amazonaws.com/screenshot-${timestamp}.jpeg`
+const imageUrl = `https://ncm-boot-images.s3.us-east-1.amazonaws.com/saddle-${timestamp}.jpeg`
 const imageLoadFailed = ref(false)
 const isShareSupported = ref(false)
 
