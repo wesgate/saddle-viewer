@@ -2,14 +2,14 @@
   <div class="bg-amber-800 min-h-screen">
     <div class="bg-amber-900 px-6 text-white font-display text-center py-8">
       <h1 class="text-xs font-bold"><a href="https://nationalcowboymuseum.org" target="_blank">National Cowboy & Western Heritage Museum</a></h1>
-      <p class="mt-4 text-5xl text-base uppercase">Now that's a good lookin' boot!</p>
+      <p class="mt-4 text-5xl text-base uppercase">Now that's a good lookin' saddle!</p>
     </div>
     <div class="container mx-auto px-4 py-8">
       <div class="max-w-2xl mx-auto bg-amber-900 rounded-lg shadow-lg p-6">
         
         <!-- Image Container -->
         <div class="mb-6">
-          <img v-if="!imageLoadFailed" :src="imageUrl" alt="A custom boot design created at the National Cowboy & Western Heritage Museum" class="w-full rounded-lg shadow-md" @error="imageLoadFailed = true" />
+          <img v-if="!imageLoadFailed" :src="imageUrl" alt="A custom saddle design created at the National Cowboy & Western Heritage Museum" class="w-full rounded-lg shadow-md" @error="imageLoadFailed = true" />
           <div v-if="imageLoadFailed" class="mt-4 p-4 bg-red-100 text-red-700 rounded-lg">
             Something went wrong loading the image. Please try again later.
           </div>
@@ -69,8 +69,8 @@ async function nativeShare() {
 
   try {
     await navigator.share({
-      title: 'I built a boot at The Cowboy!',
-      text: 'Check out my custom boot design!',
+      title: 'I built a saddle at The Cowboy!',
+      text: 'Check out my custom saddle design!',
       url: window.location.href
     });
   } catch (err) {
@@ -81,7 +81,7 @@ async function nativeShare() {
 async function downloadImage() {
     const link = document.createElement('a');
     link.href = imageUrl;
-    link.download = `boot-design-${timestamp}.jpeg`; 
+    link.download = `saddle-design-${timestamp}.jpeg`; 
     link.setAttribute('type', 'image/jpeg');
     document.body.appendChild(link);
     link.click();
@@ -96,8 +96,8 @@ const canonicalUrl = siteUrl.endsWith('/')
   : `${siteUrl}${route.fullPath}`
 
 useHead(() => {
-  const title = "I built a boot at The Cowboy!"
-  const description = 'Check out my custom boot design.'
+  const title = "I built a saddle at The Cowboy!"
+  const description = 'Check out my custom saddle design.'
 
   return {
     title,
